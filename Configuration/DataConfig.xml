@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Environment>
+    <!-- Timeout -->
+    <Timeout>5</Timeout>
+
+    <!-- Web -->
+    <BrowserName>chrome</BrowserName>
+    <url>https://opensource-demo.orangehrmlive.com</url>
+    <ImageRepo>C:\\Automation\\JavaCourse\\FinalProject\\ImageRepository\\</ImageRepo>
+
+    <!-- API -->
+    <urlAPI>http://localhost:3000/</urlAPI>
+
+    <!-- Data Driven Testing -->
+    <DDTfile>./DDTfiles/users.csv</DDTfile>
+
+    <!-- Mobile Eri Bank -->
+    <UDID>9WV4C19221014190</UDID>
+    <AppPackage>com.experitest.ExperiBank</AppPackage>
+    <AppActivity>.LoginActivity</AppActivity>
+    <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
+
+    <!-- Electron -->
+    <ElectronDriverPath>./Drivers/electrondriver.exe</ElectronDriverPath>
+    <ElectronAppPath>C:/Users/moria/AppData/Local/Programs/todolist/Todolist.exe</ElectronAppPath>
+
+    <!-- Desktop -->
+    <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
+    <AppiumServerDesktop>http://127.0.0.1:4723</AppiumServerDesktop>
+
+    <!-- Database -->
+    <DbURL>jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7598401</DbURL>
+    <DbUserName>sql7598401</DbUserName>
+    <DbPassword>XKmWb3Gn8j</DbPassword>
+
+</Environment>
