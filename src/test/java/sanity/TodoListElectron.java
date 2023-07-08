@@ -34,32 +34,9 @@ public class TodoListElectron extends CommonOps
         Verifications.verifyNum(ElectronFlows.numOfTasks(),1);
     }
 
-    @Test(description = "Test 3: Drag and Drop task")
-    @Description("This test drag one task up in the list")
-    public static void t3_dragAndDrop()
-    {
-        ElectronFlows.newTask("one");
-        ElectronFlows.newTask("two");
-        ElectronFlows.newTask("Three");
-        ElectronFlows.newTask("four");
-        ElectronFlows.newTask("five");
-
-//        action.clickAndHold(todoMain.btn_dragIcon.get(1)).moveToElement(todoMain.btn_dropPoint.get(3)).release().build().perform();
-//        action.clickAndHold(todoMain.btn_dragIcon.get(1)).release(todoMain.btn_dropPoint.get(3)).build().perform();
-//        action.moveToElement(todoMain.btn_dropPoint.get(3)).build().perform();
-//        action.release(todoMain.btn_dropPoint.get(3)).build().perform();
-//        action.release().build().perform();
-//        action.dragAndDrop(todoMain.btn_dragIcon.get(1), todoMain.btn_dropPoint.get(4)).perform();
-//        action.dragAndDropBy(todoMain.btn_dragIcon.get(2),0,300).build().perform();
-
-//        ElectronFlows.dragNDrop(1,3);
-
-        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-    }
-
-    @Test(description = "Test 4: New tasks with colors")
+    @Test(description = "Test 3: New tasks with colors")
     @Description("This test create new task with color and verify number of same color tasks using the side menu")
-    public static void t4_taskWithColor()
+    public static void t3_taskWithColor()
     {
         ElectronFlows.newTask("Red","red");
         ElectronFlows.newTask("Grey","grey");

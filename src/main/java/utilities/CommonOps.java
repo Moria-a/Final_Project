@@ -107,7 +107,7 @@ public class CommonOps extends Base
     public static void afterMethod()
     {
         if (platform.equalsIgnoreCase("electron"))
-                ElectronFlows.cleanList();
+                ElectronFlows.clearList();
     }
 
     @AfterClass

@@ -77,8 +77,8 @@ public class ElectronFlows extends CommonOps
     public static int numOfTasks()
     {return todoMain.txt_taskList.size();}
 
-    @Step("Clean all tasks from the list")
-    public static void cleanList()
+    @Step("Clear all tasks from the list")
+    public static void clearList()
     {
         clearSelectedColors();
         while (todoMain.btn_deleteTask.size() > 0)

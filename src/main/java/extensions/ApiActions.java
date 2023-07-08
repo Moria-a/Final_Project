@@ -38,9 +38,6 @@ public class ApiActions extends CommonOps
 
     @Step("Delete Employee From Server")
     public static void delete(String id)
-    {
-        response = httpRequest.delete("student/" + id);
-        response.prettyPrint();
-    }
+    {response = httpRequest.delete("student/" + id);}
 
 }

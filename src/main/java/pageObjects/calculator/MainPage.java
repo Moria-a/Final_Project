@@ -25,6 +25,15 @@ public class MainPage
     @FindBy(how = How.XPATH,using = "//*[@AutomationId='CalculatorResults']")
     public WebElement result;
 
+    @FindBy(how = How.XPATH,using = "//*[@AutomationId='negateButton']")
+    public WebElement btn_minusPlus;
+
+    @FindBy(how = How.XPATH,using = "//*[@AutomationId='Minus']")
+    public WebElement btn_minus;
+
+    @FindBy(how = How.XPATH,using = "//*[@AutomationId='decimalSeparatorButton']")
+    public WebElement btn_dot;
+
     // Numbers:
     @FindBy(how = How.NAME,using = "Zero")
     public WebElement btn_zero;

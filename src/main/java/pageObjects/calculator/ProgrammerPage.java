@@ -15,5 +15,7 @@ public class ProgrammerPage
     @FindBy(how = How.XPATH,using = "//*[@AutomationId='binaryButton']")
     public WebElement result_binary;
 
+    @FindBy(how = How.XPATH,using = "//*[@AutomationId='octolButton']")
+    public WebElement result_oct;
 
 }

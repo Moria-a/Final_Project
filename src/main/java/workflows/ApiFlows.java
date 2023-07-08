@@ -71,21 +71,5 @@ public class ApiFlows extends CommonOps
         return coursesList;
     }
 
-    @Step("Business Flow: Return Students Size List")
-    public static String listSize()
-    {
-        int i=0;
-        while (true)
-        {
-            try {ApiFlows.getStudentData("["+i+"].id");}
-            catch (Exception e)
-            {
-                i--;
-                break;
-            }
-            i++;
-        }
-        return Integer.toString(i);
-    }
 
 }

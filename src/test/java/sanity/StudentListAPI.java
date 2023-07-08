@@ -1,5 +1,6 @@
 package sanity;
 
+import extensions.ApiActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
@@ -43,7 +44,9 @@ public class StudentListAPI extends CommonOps
     @Description("This test add courses to student 1 and verify if added")
     public static void t4_deleteStudent()
     {
-        ApiFlows.delete(ApiFlows.listSize());
+        int listSize = Integer.parseInt(ApiFlows.getStudentData("list.size"));
+        ApiFlows.delete(Integer.toString(listSize-1));
+
         Verifications.verifyNum(response.getStatusCode(),204);
     }
 

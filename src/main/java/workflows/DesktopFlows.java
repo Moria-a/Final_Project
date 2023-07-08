@@ -1,18 +1,21 @@
 package workflows;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import extensions.UIactions;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import utilities.CommonOps;
 
+import java.util.concurrent.TimeUnit;
+
 public class DesktopFlows extends CommonOps
 {
     @Step("Multiply X Y")
-    public static void multiply(int x, int y)
+    public static void multiply(double x, double y)
     {
-        clickNum(x);
+        clickNum(Double.toString(x));
         UIactions.click(calcMain.btn_multiply);
-        clickNum(y);
+        clickNum(Double.toString(y));
         UIactions.click(calcMain.btn_equals);
     }
 
@@ -33,10 +36,20 @@ public class DesktopFlows extends CommonOps
         UIactions.click(type);
     }
 
-    @Step("Click on number by int")
-    public static void clickNum(int x)
+    @Step("Open Navigation and Choose Type of Calculator")
+    public static String convertNum(WebElement from, WebElement to, String num)
     {
-        for (char i : Integer.toString(x).toCharArray())
+        calcType(calcNavigation.btn_programmer);
+        UIactions.click(from);
+        clickNum(num);
+        return getResult(to,1);
+    }
+
+    @Step("Click on number by String")
+    public static void clickNum(String x)
+    {
+        boolean minus = false;
+        for (char i : x.toCharArray())
         {
             switch (i)
             {
@@ -70,10 +83,17 @@ public class DesktopFlows extends CommonOps
                 case '9':
                     UIactions.click(calcMain.btn_nine);
                     break;
+                case '.':
+                    UIactions.click(calcMain.btn_dot);
+                    break;
+                case '-':
+                    minus = true;
+                    break;
                 default:
                     throw new RuntimeException("Invalid Number");
             }
         }
+        if (minus) UIactions.click(calcMain.btn_minusPlus);
     }
 
 }
